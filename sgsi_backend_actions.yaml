@@ -2,7 +2,7 @@ openapi: 3.1.0
 info:
   title: SGSI Project Store
   description: Backend compartido para los GPTs de seguridad. Guarda y recupera información por projectId.
-  version: 1.0.0
+  version: 1.0.1
 servers:
   - url: https://sgsi-backend-default-rtdb.firebaseio.com
 paths:
@@ -23,6 +23,47 @@ paths:
             application/json:
               schema:
                 type: object
+                properties:
+                  cliente:
+                    type: string
+                  sector:
+                    type: string
+                  nivelMadurez:
+                    type: string
+                  normativas:
+                    type: array
+                    items:
+                      type: string
+                  iocList:
+                    type: array
+                    items:
+                      type: object
+                  hallazgosTecnicos:
+                    type: array
+                    items:
+                      type: string
+                  controlesExistentes:
+                    type: array
+                    items:
+                      type: string
+                  politicasGeneradas:
+                    type: array
+                    items:
+                      type: string
+                  sops:
+                    type: array
+                    items:
+                      type: string
+                  rtm:
+                    type: array
+                    items:
+                      type: string
+                  recomendacionesHumanas:
+                    type: array
+                    items:
+                      type: string
+                  estado:
+                    type: string
     put:
       operationId: saveProjectData
       summary: Guarda o actualiza los datos completos de un proyecto SGSI.
@@ -38,6 +79,47 @@ paths:
           application/json:
             schema:
               type: object
+              properties:
+                cliente:
+                  type: string
+                sector:
+                  type: string
+                nivelMadurez:
+                  type: string
+                normativas:
+                  type: array
+                  items:
+                    type: string
+                iocList:
+                  type: array
+                  items:
+                    type: object
+                hallazgosTecnicos:
+                  type: array
+                  items:
+                    type: string
+                controlesExistentes:
+                  type: array
+                  items:
+                    type: string
+                politicasGeneradas:
+                  type: array
+                  items:
+                    type: string
+                sops:
+                  type: array
+                  items:
+                    type: string
+                rtm:
+                  type: array
+                  items:
+                    type: string
+                recomendacionesHumanas:
+                  type: array
+                  items:
+                    type: string
+                estado:
+                  type: string
       responses:
         '200':
           description: Proyecto actualizado correctamente.
