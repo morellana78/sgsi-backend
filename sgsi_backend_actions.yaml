@@ -2,7 +2,7 @@ openapi: 3.1.0
 info:
   title: SGSI Project Store
   description: Backend compartido para los GPTs de seguridad. Guarda y recupera información por projectId.
-  version: 1.0.1
+  version: 1.0.2
 servers:
   - url: https://sgsi-backend-default-rtdb.firebaseio.com
 paths:
@@ -23,6 +23,7 @@ paths:
             application/json:
               schema:
                 type: object
+                required: [cliente, sector, nivelMadurez]
                 properties:
                   cliente:
                     type: string
@@ -79,6 +80,7 @@ paths:
           application/json:
             schema:
               type: object
+              required: [cliente, sector, nivelMadurez]
               properties:
                 cliente:
                   type: string
